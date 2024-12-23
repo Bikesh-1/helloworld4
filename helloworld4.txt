@@ -1,4 +1,98 @@
-hiii2
+D:\gitlabexternal>cd gitlab4a
 
+D:\gitlabexternal\gitlab4a>git clone https://github.com/Bikesh-1/helloworld4.git
+Cloning into 'helloworld4'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
 
-heelo world 
+D:\gitlabexternal\gitlab4a>cd helloworld4
+
+D:\gitlabexternal\gitlab4a\helloworld4>git checkout -b fb1
+Switched to a new branch 'fb1'
+
+D:\gitlabexternal\gitlab4a\helloworld4>git fetch origin
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 945 bytes | 3.00 KiB/s, done.
+From https://github.com/Bikesh-1/helloworld4
+   87282c0..798ad21  main       -> origin/main
+
+D:\gitlabexternal\gitlab4a\helloworld4>git rebase origin/main
+Successfully rebased and updated refs/heads/fb1.
+
+D:\gitlabexternal\gitlab4a\helloworld4>git add .
+
+D:\gitlabexternal\gitlab4a\helloworld4>git commit -m "hello world"
+[fb1 b344e3f] hello world
+ 1 file changed, 1 insertion(+)
+ create mode 100644 local.txt
+
+D:\gitlabexternal\gitlab4a\helloworld4>git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 950 bytes | 1024 bytes/s, done.
+From https://github.com/Bikesh-1/helloworld4
+   798ad21..4a3f230  main       -> origin/main
+
+D:\gitlabexternal\gitlab4a\helloworld4>git rebase origin/main
+Successfully rebased and updated refs/heads/fb1.
+
+D:\gitlabexternal\gitlab4a\helloworld4>git add .
+
+D:\gitlabexternal\gitlab4a\helloworld4>git rebase --continue
+fatal: no rebase in progress
+
+D:\gitlabexternal\gitlab4a\helloworld4>
+D:\gitlabexternal\gitlab4a\helloworld4>
+D:\gitlabexternal\gitlab4a\helloworld4>git push origin fb1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 327 bytes | 327.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'fb1' on GitHub by visiting:
+remote:      https://github.com/Bikesh-1/helloworld4/pull/new/fb1
+remote:
+To https://github.com/Bikesh-1/helloworld4.git
+ * [new branch]      fb1 -> fb1
+
+D:\gitlabexternal\gitlab4a\helloworld4>git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+D:\gitlabexternal\gitlab4a\helloworld4>git branch
+* fb1
+  main
+
+D:\gitlabexternal\gitlab4a\helloworld4>git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        local.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\gitlabexternal\gitlab4a\helloworld4>git add .
+
+D:\gitlabexternal\gitlab4a\helloworld4>git commit -m "hello world"
+[fb1 0222833] hello world
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\gitlabexternal\gitlab4a\helloworld4>git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+D:\gitlabexternal\gitlab4a\helloworld4>git merge fb1
+Updating 87282c0..0222833
+Fast-forward
+ helloworld4.txt | 4 ++++
+ local.txt       | 2 ++
+ 2 files changed, 6 insertions(+)
+ create mode 100644 helloworld4.txt
+ create mode 100644 local.txt
